@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module tb_comptute();
+module tb_compute();
 
 reg clk = 1'b0;
 always #10 clk = ~clk;
@@ -28,6 +28,25 @@ reg             [7:0]   M10K_read_address_int; // 8 bits, 0 to 256
 reg             [7:0]   M10K_write_address_int; // 8 bits, 0 to 256
 reg             M10K_write_int; // write to M10K block [i]
 
+wire signed     [7:0]   M10K_write_data_source_wire;
+wire            [7:0]   M10K_read_address_source_wire; // 8 bits, 0 to 256
+wire            [7:0]   M10K_write_address_source_wire; // 8 bits, 0 to 256
+wire            M10K_write_source_wire; // write to M10K block [i]
+
+wire signed     [7:0]   M10K_write_data_int_wire;
+wire            [7:0]   M10K_read_address_int_wire; // 8 bits, 0 to 256
+wire            [7:0]   M10K_write_address_int_wire; // 8 bits, 0 to 256
+wire            M10K_write_int_wire; // write to M10K block [i]
+
+assign M10K_write_data_source_wire = M10K_write_data_source;
+assign M10K_read_address_source_wire = M10K_read_address_source;
+assign M10K_write_address_source_wire = M10K_write_address_source;
+assign M10K_write_source_wire = M10K_write_source;
+
+assign M10K_write_data_int_wire = M10K_write_data_int;
+assign M10K_read_address_int_wire = M10K_read_address_int;
+assign M10K_write_address_int_wire = M10K_write_address_int;
+assign M10K_write_int_wire = M10K_write_int;
 
 M10K_1K_8 M10K_source( 
     .q              (M10K_read_data_source),
@@ -86,15 +105,15 @@ compute dut(
 	.clk                            (clk),
 	.reset                          (reset),
 	.M10K_read_data_source          (M10K_read_data_source),
-    .M10K_write_data_source_wire    (M10K_write_data_source),
-    .M10K_read_address_source_wire  (M10K_read_address_source),
-    .M10K_write_address_source_wire (M10K_write_address_source),
-    .M10K_write_source_wire         (M10K_write_source),
+    .M10K_write_data_source_wire    (M10K_write_data_source_wire),
+    .M10K_read_address_source_wire  (M10K_read_address_source_wire),
+    .M10K_write_address_source_wire (M10K_write_address_source_wire),
+    .M10K_write_source_wire         (M10K_write_source_wire),
     .M10K_read_data_int             (M10K_read_data_int),
-    .M10K_write_data_int_wire       (M10K_write_data_int),
-    .M10K_read_address_int_wire     (M10K_read_address_int),
-    .M10K_write_address_int_wire    (M10K_write_address_int),
-    .M10K_write_int_wire            (M10K_write_int),
+    .M10K_write_data_int_wire       (M10K_write_data_int_wire),
+    .M10K_read_address_int_wire     (M10K_read_address_int_wire),
+    .M10K_write_address_int_wire    (M10K_write_address_int_wire),
+    .M10K_write_int_wire            (M10K_write_int_wire),
     .START                          (START)
 );
 

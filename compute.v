@@ -1,16 +1,16 @@
 module compute (
-    input           clk, reset, START
-    input  signed   [7:0]   M10K_read_data_source;
-    output signed   [7:0]   M10K_write_data_source_wire;
-    output          [7:0]   M10K_read_address_source_wire; // 8 bits, 0 to 256
-    output          [7:0]   M10K_write_address_source_wire; // 8 bits, 0 to 256
-    output          M10K_write_source_wire; // write to M10K block [i]
+    input           clk, reset, START,
+    input  signed   [7:0]   M10K_read_data_source,
+    output signed   [7:0]   M10K_write_data_source_wire,
+    output          [7:0]   M10K_read_address_source_wire, // 8 bits, 0 to 256
+    output          [7:0]   M10K_write_address_source_wire, // 8 bits, 0 to 256
+    output          M10K_write_source_wire, // write to M10K block [i]
 
-    input  signed   [7:0]   M10K_read_data_int;
-    output signed   [7:0]   M10K_write_data_int_wire;
-    output          [7:0]   M10K_read_address_int_wire; // 8 bits, 0 to 256
-    output          [7:0]   M10K_write_address_int_wire; // 8 bits, 0 to 256
-    output          M10K_write_int_wire; // write to M10K block [i]
+    input  signed   [7:0]   M10K_read_data_int,
+    output signed   [7:0]   M10K_write_data_int_wire,
+    output          [7:0]   M10K_read_address_int_wire, // 8 bits, 0 to 256
+    output          [7:0]   M10K_write_address_int_wire, // 8 bits, 0 to 256
+    output          M10K_write_int_wire // write to M10K block [i]
 );
 
 reg signed      [7:0]   M10K_data_buffer_source;
@@ -40,8 +40,8 @@ assign M10K_write_int_wire         = M10K_write_int;
 
 
 
-localparam VID_IN_WIDTH = 4
-localparam VID_IN_HEIGHT = 4
+localparam VID_IN_WIDTH = 4;
+localparam VID_IN_HEIGHT = 4;
 
 reg [1:0] row, col, col_to_add;
 
@@ -54,7 +54,7 @@ reg [7:0] sum ;
 
 integer row_data_i;
 
-always @ posedge(clk) begin
+always @ (posedge clk) begin
     if ( reset ) begin // reset
         row <= 0;
         col <= 0;
@@ -102,7 +102,7 @@ always @ posedge(clk) begin
         end
         else begin // write to M10K block 
             M10K_write_data_int <= sum; 
-            M10K_write_address_int <= row << 2 + COL ;
+            M10K_write_address_int <= row << 2 + col ;
             M10K_write_int <= 1;
             state_reg <= 0; 
         end

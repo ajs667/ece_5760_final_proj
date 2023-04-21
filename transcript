@@ -1,0 +1,71 @@
+# Compile of tb_compute.v was successful.
+# Compile of compute.v failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of compute.v failed with 1 errors.
+# Compile of compute.v failed with 1 errors.
+# Compile of compute.v failed with 3 errors.
+# Compile of compute.v failed with 2 errors.
+# Error opening C:/Users/gtz4/ece_5760_final_proj/(vlog-13069) C:/Users/gtz4/ece_5760_final_proj/compute.v
+# Path name 'C:/Users/gtz4/ece_5760_final_proj/(vlog-13069) C:/Users/gtz4/ece_5760_final_proj/compute.v' doesn't exist.
+# Compile of compute.v failed with 1 errors.
+# Compile of compute.v was successful.
+vsim -gui work.compute work.tb_comptute
+# vsim -gui work.compute work.tb_comptute 
+# Start time: 13:20:49 on Apr 21,2023
+# Loading work.compute
+# Loading work.tb_comptute
+# Loading work.M10K_1K_8
+# ** Error (suppressible): (vsim-3053) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(85): Illegal output or inout port connection for port 'M10K_write_data_source_wire'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_comptute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# ** Error (suppressible): (vsim-3053) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(85): Illegal output or inout port connection for port 'M10K_read_address_source_wire'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_comptute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# ** Error (suppressible): (vsim-3053) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(85): Illegal output or inout port connection for port 'M10K_write_address_source_wire'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_comptute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# ** Error (suppressible): (vsim-3053) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(85): Illegal output or inout port connection for port 'M10K_write_source_wire'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_comptute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# ** Error (suppressible): (vsim-3053) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(85): Illegal output or inout port connection for port 'M10K_write_data_int_wire'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_comptute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# ** Error (suppressible): (vsim-3053) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(85): Illegal output or inout port connection for port 'M10K_read_address_int_wire'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_comptute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# ** Error (suppressible): (vsim-3053) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(85): Illegal output or inout port connection for port 'M10K_write_address_int_wire'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_comptute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# ** Error (suppressible): (vsim-3053) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(85): Illegal output or inout port connection for port 'M10K_write_int_wire'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_comptute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# Error loading design
+# End time: 13:20:49 on Apr 21,2023, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 0
+# Compile of tb_compute.v was successful.
+# Compile of compute.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.compute work.tb_comptute
+# vsim -gui work.compute work.tb_comptute 
+# Start time: 13:31:03 on Apr 21,2023
+# Loading work.compute
+# Loading work.tb_comptute
+# Loading work.M10K_1K_8
+add wave -position insertpoint  \
+sim:/compute/clk \
+sim:/compute/reset \
+sim:/compute/START
+add wave -position insertpoint  \
+sim:/compute/M10K_read_data_source \
+sim:/compute/M10K_read_data_int \
+sim:/compute/M10K_write_data_source \
+sim:/compute/M10K_read_address_source \
+sim:/compute/M10K_write_address_source \
+sim:/compute/M10K_write_source \
+sim:/compute/M10K_data_buffer_int \
+sim:/compute/M10K_write_data_int \
+sim:/compute/M10K_read_address_int \
+sim:/compute/M10K_write_address_int \
+sim:/compute/M10K_write_int \
+sim:/compute/row \
+sim:/compute/col \
+sim:/compute/col_to_add \
+sim:/compute/state_reg \
+sim:/compute/curr_row_source_data \
+sim:/compute/sum \
+sim:/compute/row_data_i
+run -all
+# End time: 14:18:24 on Apr 21,2023, Elapsed time: 0:47:21
+# Errors: 0, Warnings: 0
