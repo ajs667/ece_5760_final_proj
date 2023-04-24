@@ -1,67 +1,38 @@
+# Compile of compute_dummy.v was successful.
 # Compile of tb_compute.v was successful.
-# Compile of compute.v was successful.
 # 2 compiles, 0 failed with no errors.
-vsim -gui work.compute work.tb_compute
-# vsim -gui work.compute work.tb_compute 
-# Start time: 12:27:27 on Apr 24,2023
-# Loading work.compute
+vsim -gui work.compute_dummy work.tb_compute
+# vsim -gui work.compute_dummy work.tb_compute 
+# Start time: 13:56:39 on Apr 24,2023
+# Loading work.compute_dummy
 # Loading work.tb_compute
+# ** Warning: (vsim-3017) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Too few port connections. Expected 13, found 2.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_compute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'START'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_read_data_source'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_data_source_wire'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_read_address_source_wire'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_address_source_wire'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_source_wire'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_read_data_int'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_data_int_wire'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_read_address_int_wire'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_address_int_wire'.
+# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_int_wire'.
+add wave -position insertpoint  \
+sim:/compute_dummy/clk \
+sim:/compute_dummy/reset
 add wave -position insertpoint  \
 sim:/tb_compute/clk \
-sim:/tb_compute/START \
-sim:/tb_compute/reset \
-sim:/tb_compute/M10K_read_data_source \
-sim:/tb_compute/M10K_write_data_source \
-sim:/tb_compute/M10K_read_address_source \
-sim:/tb_compute/M10K_write_address_source \
-sim:/tb_compute/M10K_write_source \
-sim:/tb_compute/M10K_read_data_int \
-sim:/tb_compute/M10K_write_data_int \
-sim:/tb_compute/M10K_read_address_int \
-sim:/tb_compute/M10K_write_address_int \
-sim:/tb_compute/M10K_write_int \
-sim:/tb_compute/M10K_write_data_source_wire \
-sim:/tb_compute/M10K_read_address_source_wire \
-sim:/tb_compute/M10K_write_address_source_wire \
-sim:/tb_compute/M10K_write_source_wire \
-sim:/tb_compute/M10K_write_data_int_wire \
-sim:/tb_compute/M10K_read_address_int_wire \
-sim:/tb_compute/M10K_write_address_int_wire \
-sim:/tb_compute/M10K_write_int_wire
+sim:/tb_compute/reset
+# Load canceled
 run -all
-# Compile of tb_compute.v failed with 1 errors.
-# Compile of compute.v was successful.
-# 2 compiles, 1 failed with 1 error.
+# Compile of compute_dummy.v was successful.
 # Compile of tb_compute.v was successful.
-# Compile of compute.v was successful.
 # 2 compiles, 0 failed with no errors.
 restart -f
-# Loading work.compute
+# Loading work.compute_dummy
 # Loading work.tb_compute
-# Loading work.M10K_1K_8
 run -all
-# Compile of tb_compute.v was successful.
-# Compile of compute.v was successful.
-# 2 compiles, 0 failed with no errors.
-restart -f
-# Loading work.compute
-# Loading work.tb_compute
-# Loading work.M10K_1K_8
-run -all
-add wave -position insertpoint  \
-sim:/tb_compute/idx
-add wave -position insertpoint  \
-sim:/tb_compute/state_reg \
-sim:/tb_compute/state
-restart -f
-run -all
-# Compile of tb_compute.v was successful.
-# Compile of compute.v was successful.
-# 2 compiles, 0 failed with no errors.
-restart -f
-# Loading work.compute
-# Loading work.tb_compute
-# Loading work.M10K_1K_8
-run -all
-# End time: 12:41:42 on Apr 24,2023, Elapsed time: 0:14:15
-# Errors: 0, Warnings: 0
+# End time: 14:02:24 on Apr 24,2023, Elapsed time: 0:05:45
+# Errors: 1, Warnings: 12

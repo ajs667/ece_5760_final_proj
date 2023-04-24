@@ -62,6 +62,7 @@ always @ (posedge clk) begin
         M10K_write_source <= 0;
         M10K_write_int <= 0;
         sum <= 0;
+        state_reg <= 0;
     end
     else begin
         if (state == 0) begin
@@ -71,56 +72,56 @@ always @ (posedge clk) begin
             else begin state_reg <= state_reg; end
         end
         else if ( state == 1 ) begin // request values to read
-        M10K_read_address_source <= row << 2 + col ;
+            M10K_read_address_source <= row << 2 + col ;
 
-        if ( row > 0 ) begin // if row is not 0, get integral data from row-1, col
-            M10K_read_address_int <= (row - 1) << 2 + col ; // curr row * num col + curr col 
-        end
+            if ( row > 0 ) begin // if row is not 0, get integral data from row-1, col
+                M10K_read_address_int <= (row - 1) << 2 + col ; // curr row * num col + curr col 
+            end
 
-        M10K_write_source <= 0;
-        M10K_write_int <= 0;
+            M10K_write_source <= 0;
+            M10K_write_int <= 0;
 
-        state_reg <= state + 1;
-    end
-    else if ( state == 2 ) begin // wait one 
-        state_reg <= state + 1;
-    end
-    else if ( state == 3 ) begin // receive the data from M10K block 
-        curr_row_source_data[col] <= M10K_read_data_source;
-        if ( row > 0 ) begin
-            sum <= M10K_read_data_int;
+            state_reg <= state + 1;
         end
-        else begin 
-            sum <= M10K_read_data_source;
+        else if ( state == 2 ) begin // wait one 
+            state_reg <= state + 1;
         end
-        state_reg <= state + 1;
-    end
-    else if ( state == 4 ) begin // repeat in state until added all curr_row_source_data
-        if (col_to_add <= col) begin // include this source 
-            sum <= sum + curr_row_source_data[col_to_add];
-            state_reg <= 3;
-        end
-        else begin // write to M10K block 
-            M10K_write_data_int <= sum; 
-            M10K_write_address_int <= row << 2 + col ;
-            M10K_write_int <= 1;
-            state_reg <= 0; 
-        end
-
-        if ( col < VID_IN_WIDTH ) begin 
-            col <= col + 1;
-        end
-        else begin 
-            col <= 0;
-            // check to see if reached last row 
-            if ( row < VID_IN_HEIGHT ) begin 
-                row <= row + 1;
+        else if ( state == 3 ) begin // receive the data from M10K block 
+            curr_row_source_data[col] <= M10K_read_data_source;
+            if ( row > 0 ) begin
+                sum <= M10K_read_data_int;
             end
             else begin 
-                row <= 0;
+                sum <= M10K_read_data_source;
+            end
+            state_reg <= state + 1;
+        end
+        else if ( state == 4 ) begin // repeat in state until added all curr_row_source_data
+            if (col_to_add <= col) begin // include this source 
+                sum <= sum + curr_row_source_data[col_to_add];
+                state_reg <= 3;
+            end
+            else begin // write to M10K block 
+                M10K_write_data_int <= sum; 
+                M10K_write_address_int <= row << 2 + col ;
+                M10K_write_int <= 1;
+                state_reg <= 0; 
+            end
+
+            if ( col < VID_IN_WIDTH ) begin 
+                col <= col + 1;
+            end
+            else begin 
+                col <= 0;
+                // check to see if reached last row 
+                if ( row < VID_IN_HEIGHT ) begin 
+                    row <= row + 1;
+                end
+                else begin 
+                    row <= 0;
+                end
             end
         end
-    end
     end 
 end
 
