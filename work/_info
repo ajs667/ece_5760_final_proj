@@ -9,66 +9,87 @@ z2
 cModel Technology
 dC:/programs/intelFPGA/18.1
 vcompute
-Z0 !s110 1682098256
+Z0 !s110 1682354374
 !i10b 1
 !s100 <XPOPndXiEmc2Z`AUi6Y`1
-I^Hc=P0GOaKHf39MU6Mb761
+I`YAnbH6jUUEb^gVhKMioK1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/gtz4/ece_5760_final_proj
 w1682097534
-8C:\Users\gtz4\ece_5760_final_proj\compute.v
-FC:\Users\gtz4\ece_5760_final_proj\compute.v
+8C:/Users/gtz4/ece_5760_final_proj/compute.v
+FC:/Users/gtz4/ece_5760_final_proj/compute.v
 L0 1
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1682098256.000000
-!s107 C:\Users\gtz4\ece_5760_final_proj\compute.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\gtz4\ece_5760_final_proj\compute.v|
+Z4 !s108 1682354374.000000
+!s107 C:/Users/gtz4/ece_5760_final_proj/compute.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gtz4/ece_5760_final_proj/compute.v|
 !i113 1
-Z4 o-work work
-Z5 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
 vM10K_1K_8
 R0
 !i10b 1
-!s100 f33nOo1Z@8km<KKQMJKc20
-I1OGlFQX]Tmj5]?ma`ClK`3
+!s100 52lhZ;iicRVkU28016lAL3
+IeF@AYWojPf=`k4oc1I8ok0
 R1
 R2
-Z6 w1682098247
-Z7 8C:\Users\gtz4\ece_5760_final_proj\tb_compute.v
-Z8 FC:\Users\gtz4\ece_5760_final_proj\tb_compute.v
-L0 122
+Z7 w1682354366
+Z8 8C:\Users\gtz4\ece_5760_final_proj\tb_compute.v
+Z9 FC:\Users\gtz4\ece_5760_final_proj\tb_compute.v
+L0 118
 R3
 r1
 !s85 0
 31
-Z9 !s108 1682098255.000000
+R4
 Z10 !s107 C:\Users\gtz4\ece_5760_final_proj\tb_compute.v|
 Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\gtz4\ece_5760_final_proj\tb_compute.v|
 !i113 1
-R4
 R5
+R6
 n@m10@k_1@k_8
 vtb_comptute
-R0
+!s110 1682098256
 !i10b 1
 !s100 JiFjQk9h5?Y?1jJT:C^VM2
 I5:fR>V@N;iCmHzCmGQ>Qf1
 R1
 R2
-R6
-R7
+w1682098247
 R8
+R9
 L0 3
 R3
 r1
 !s85 0
 31
-R9
+!s108 1682098255.000000
 R10
 R11
 !i113 1
-R4
 R5
+R6
+vtb_compute
+R0
+!i10b 1
+!s100 ;23a]T57mJIk=jB>PWAQm2
+I:2i4XW96k5MajoeBPFf<b1
+R1
+R2
+R7
+R8
+R9
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R10
+R11
+!i113 1
+R5
+R6

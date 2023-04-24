@@ -5,8 +5,6 @@ module tb_compute();
 reg clk = 1'b0;
 always #10 clk = ~clk;
 
-reg START;
-
 reg reset;
 initial begin
 	reset = 1'b0;
@@ -15,6 +13,8 @@ initial begin
 	#30
 	reset = 1'b0;
 end
+
+reg START;
 
 wire signed     [7:0]   M10K_read_data_source;
 reg signed      [7:0]   M10K_write_data_source;
@@ -66,7 +66,7 @@ M10K_1K_8 M10K_int(
     .clk            (clk)
 );
 
-reg        idx;
+reg  [4:0] idx;
 reg  [3:0] state_reg;
 wire [3:0] state;
 assign state = state_reg;
@@ -79,21 +79,18 @@ always @(posedge clk) begin
         START <= 0;
     end
     else begin
-        if(state == 0) begin
+        if(state == 0) begin // write 1 to source 
             M10K_write_address_source <= idx;
             M10K_write_data_source    <= 32'b1;
-            state_reg <= 1;
-        end
-        else if (state == 1) begin
-            state_reg <= 2;
-            idx <= idx + 1;
-        end
-        else if (state == 2) begin
-            if (idx == 17) begin
+            M10K_write_source <= 1;
+
+            if (idx == 16) begin
                 state_reg <= state_reg;
                 START <= 1;
+                M10K_write_source <= 0;
             end
             else begin
+                idx <= idx + 5'd1;
                 state_reg <= 0;
             end
         end
