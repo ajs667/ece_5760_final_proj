@@ -1,38 +1,401 @@
-# Compile of compute_dummy.v was successful.
 # Compile of tb_compute.v was successful.
+# Compile of compute_dummy.v was successful.
 # 2 compiles, 0 failed with no errors.
 vsim -gui work.compute_dummy work.tb_compute
 # vsim -gui work.compute_dummy work.tb_compute 
-# Start time: 13:56:39 on Apr 24,2023
+# Start time: 12:53:45 on Apr 26,2023
 # Loading work.compute_dummy
 # Loading work.tb_compute
-# ** Warning: (vsim-3017) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Too few port connections. Expected 13, found 2.
-#    Time: 0 ps  Iteration: 0  Instance: /tb_compute/dut File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'START'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_read_data_source'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_data_source_wire'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_read_address_source_wire'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_address_source_wire'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_source_wire'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_read_data_int'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_data_int_wire'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_read_address_int_wire'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_address_int_wire'.
-# ** Warning: (vsim-3722) C:/Users/gtz4/ece_5760_final_proj/tb_compute.v(112): [TFMPC] - Missing connection for port 'M10K_write_int_wire'.
 add wave -position insertpoint  \
 sim:/compute_dummy/clk \
-sim:/compute_dummy/reset
+sim:/compute_dummy/reset \
+sim:/compute_dummy/dummy_var
 add wave -position insertpoint  \
 sim:/tb_compute/clk \
 sim:/tb_compute/reset
-# Load canceled
+add wave -position insertpoint  \
+sim:/tb_compute/dut/clk \
+sim:/tb_compute/dut/reset
 run -all
-# Compile of compute_dummy.v was successful.
+quit -sim
+# End time: 12:59:38 on Apr 26,2023, Elapsed time: 0:05:53
+# Errors: 0, Warnings: 0
 # Compile of tb_compute.v was successful.
+# Compile of compute_dummy.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.tb_compute
+# vsim -gui work.tb_compute 
+# Start time: 13:00:01 on Apr 26,2023
+# Loading work.tb_compute
+# Loading work.compute_dummy
+quit -sim
+# End time: 13:00:16 on Apr 26,2023, Elapsed time: 0:00:15
+# Errors: 0, Warnings: 0
+vsim -gui work.testbench
+# vsim -gui work.testbench 
+# Start time: 13:00:39 on Apr 26,2023
+# Loading work.testbench
+# Loading work.DDS
+# Loading work.sync_rom
+add wave -position insertpoint  \
+sim:/testbench/clk_50 \
+sim:/testbench/clk_25 \
+sim:/testbench/reset \
+sim:/testbench/index \
+sim:/testbench/testbench_out
+run -all
+quit -sim
+# End time: 13:01:04 on Apr 26,2023, Elapsed time: 0:00:25
+# Errors: 0, Warnings: 0
+# Compile of tb_compute.v was successful.
+# Compile of compute_dummy.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# vsim -gui work.testbench 
+# Start time: 13:02:36 on Apr 26,2023
+# Loading work.testbench
+# Loading work.compute_dummy
+add wave -position insertpoint  \
+sim:/testbench/clk_50 \
+sim:/testbench/clk_25 \
+sim:/testbench/reset \
+sim:/testbench/index \
+sim:/testbench/testbench_out
+add wave -position insertpoint  \
+sim:/testbench/DUT/clk \
+sim:/testbench/DUT/reset \
+sim:/testbench/DUT/dummy_var
+run -all
+restart -f
+# Compile of tb_compute.v was successful.
+# Compile of compute_dummy.v was successful.
+# 2 compiles, 0 failed with no errors.
+run -all
+# Compile of tb_compute.v was successful.
+# Compile of compute_dummy.v was successful.
 # 2 compiles, 0 failed with no errors.
 restart -f
+# Loading work.testbench
+# Loading work.compute_dummy
+run -all
+quit -sim
+# End time: 13:05:43 on Apr 26,2023, Elapsed time: 0:03:07
+# Errors: 0, Warnings: 0
+vsim -gui work.compute_dummy work.tb_compute
+# vsim -gui work.compute_dummy work.tb_compute 
+# Start time: 13:05:55 on Apr 26,2023
 # Loading work.compute_dummy
 # Loading work.tb_compute
+# ** Error (suppressible): (vsim-3009) [TSCALE] - Module 'tb_compute' does not have a timeunit/timeprecision specification in effect, but other modules do.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_compute File: C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+# Error loading design
+# End time: 13:05:55 on Apr 26,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Compile of tb_compute.v was successful.
+# Compile of compute_dummy.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.compute_dummy work.tb_compute
+# vsim -gui work.compute_dummy work.tb_compute 
+# Start time: 13:06:20 on Apr 26,2023
+# Loading work.compute_dummy
+# Loading work.tb_compute
+add wave -position insertpoint  \
+sim:/compute_dummy/clk \
+sim:/compute_dummy/reset \
+sim:/compute_dummy/dummy_var
+add wave -position insertpoint  \
+sim:/tb_compute/clk \
+sim:/tb_compute/reset
 run -all
-# End time: 14:02:24 on Apr 24,2023, Elapsed time: 0:05:45
-# Errors: 1, Warnings: 12
+quit -sim
+# End time: 13:07:36 on Apr 26,2023, Elapsed time: 0:01:16
+# Errors: 0, Warnings: 0
+# Compile of tb_compute.v was successful.
+# Compile of compute_dummy.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.compute_dummy work.testbench
+# vsim -gui work.compute_dummy work.testbench 
+# Start time: 13:07:51 on Apr 26,2023
+# Loading work.compute_dummy
+# Loading work.testbench
+add wave -position insertpoint  \
+sim:/compute_dummy/clk \
+sim:/compute_dummy/reset \
+sim:/compute_dummy/dummy_var
+add wave -position insertpoint  \
+sim:/testbench/clk_50 \
+sim:/testbench/clk_25 \
+sim:/testbench/reset
+run -all
+quit -sim
+# End time: 13:09:52 on Apr 26,2023, Elapsed time: 0:02:01
+# Errors: 0, Warnings: 0
+# Compile of tb_compute.v failed with 1 errors.
+# Compile of compute_dummy.v was successful.
+# 2 compiles, 1 failed with 1 error.
+# Compile of tb_compute.v was successful.
+# Compile of compute_dummy.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.testbench
+# vsim -gui work.testbench 
+# Start time: 13:10:26 on Apr 26,2023
+# Loading work.testbench
+# Loading work.compute_dummy
+add wave -position insertpoint  \
+sim:/testbench/clk_50 \
+sim:/testbench/clk_25 \
+sim:/testbench/reset \
+sim:/testbench/index \
+sim:/testbench/testbench_out \
+sim:/testbench/clk
+add wave -position insertpoint  \
+sim:/testbench/dut/clk \
+sim:/testbench/dut/reset \
+sim:/testbench/dut/dummy_var
+run -all
+# Compile of tb_compute.v was successful.
+# Compile of compute_dummy.v was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# Loading work.testbench
+# Loading work.compute_dummy
+# Warning in wave window restart: (vish-4014) No objects found matching '/testbench/clk'. 
+run -all
+quit -sim
+# End time: 13:13:34 on Apr 26,2023, Elapsed time: 0:03:08
+# Errors: 1, Warnings: 0
+# Compile of tb_compute.v was successful.
+vsim -gui work.testbench
+# vsim -gui work.testbench 
+# Start time: 13:14:01 on Apr 26,2023
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+add wave -position insertpoint  \
+sim:/testbench/clk_50 \
+sim:/testbench/clk_25 \
+sim:/testbench/reset \
+sim:/testbench/index \
+sim:/testbench/testbench_out \
+sim:/testbench/START \
+sim:/testbench/M10K_read_data_source \
+sim:/testbench/M10K_write_data_source \
+sim:/testbench/M10K_read_address_source \
+sim:/testbench/M10K_write_address_source \
+sim:/testbench/M10K_write_source \
+sim:/testbench/M10K_read_data_int \
+sim:/testbench/M10K_write_data_int \
+sim:/testbench/M10K_read_address_int \
+sim:/testbench/M10K_write_address_int \
+sim:/testbench/M10K_write_int \
+sim:/testbench/M10K_write_data_source_wire \
+sim:/testbench/M10K_read_address_source_wire \
+sim:/testbench/M10K_write_address_source_wire \
+sim:/testbench/M10K_write_source_wire \
+sim:/testbench/M10K_write_data_int_wire \
+sim:/testbench/M10K_read_address_int_wire \
+sim:/testbench/M10K_write_address_int_wire \
+sim:/testbench/M10K_write_int_wire \
+sim:/testbench/clk \
+sim:/testbench/idx \
+sim:/testbench/state_reg \
+sim:/testbench/state
+add wave -position insertpoint  \
+sim:/testbench/dut/clk \
+sim:/testbench/dut/reset \
+sim:/testbench/dut/START \
+sim:/testbench/dut/M10K_read_data_source \
+sim:/testbench/dut/M10K_write_data_source_wire \
+sim:/testbench/dut/M10K_read_address_source_wire \
+sim:/testbench/dut/M10K_write_address_source_wire \
+sim:/testbench/dut/M10K_write_source_wire \
+sim:/testbench/dut/M10K_read_data_int \
+sim:/testbench/dut/M10K_write_data_int_wire \
+sim:/testbench/dut/M10K_read_address_int_wire \
+sim:/testbench/dut/M10K_write_address_int_wire \
+sim:/testbench/dut/M10K_write_int_wire \
+sim:/testbench/dut/M10K_data_buffer_source \
+sim:/testbench/dut/M10K_write_data_source \
+sim:/testbench/dut/M10K_read_address_source \
+sim:/testbench/dut/M10K_write_address_source \
+sim:/testbench/dut/M10K_write_source \
+sim:/testbench/dut/M10K_data_buffer_int \
+sim:/testbench/dut/M10K_write_data_int \
+sim:/testbench/dut/M10K_read_address_int \
+sim:/testbench/dut/M10K_write_address_int \
+sim:/testbench/dut/M10K_write_int \
+sim:/testbench/dut/row \
+sim:/testbench/dut/col \
+sim:/testbench/dut/col_to_add \
+sim:/testbench/dut/state_reg \
+sim:/testbench/dut/state \
+sim:/testbench/dut/curr_row_source_data \
+sim:/testbench/dut/sum \
+sim:/testbench/dut/row_data_i
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+# Warning in wave window restart: (vish-4014) No objects found matching '/testbench/clk'. 
+# Compile of tb_compute.v was successful.
+# Load canceled
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+add wave -position insertpoint  \
+sim:/testbench/M10K_source/mem
+# Compile of tb_compute.v failed with 1 errors.
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+add wave -position insertpoint  \
+sim:/testbench/M10K_int/mem
+add wave -position insertpoint  \
+sim:/testbench/dut/M10K_read_data_source \
+sim:/testbench/dut/M10K_write_data_source_wire \
+sim:/testbench/dut/M10K_read_address_source_wire \
+sim:/testbench/dut/M10K_write_address_source_wire \
+sim:/testbench/dut/M10K_write_source_wire \
+sim:/testbench/dut/M10K_read_data_int \
+sim:/testbench/dut/M10K_write_data_int_wire \
+sim:/testbench/dut/M10K_read_address_int_wire \
+sim:/testbench/dut/M10K_write_address_int_wire \
+sim:/testbench/dut/M10K_write_int_wire \
+sim:/testbench/dut/M10K_data_buffer_source \
+sim:/testbench/dut/M10K_write_data_source \
+sim:/testbench/dut/M10K_read_address_source \
+sim:/testbench/dut/M10K_write_address_source \
+sim:/testbench/dut/M10K_write_source \
+sim:/testbench/dut/M10K_data_buffer_int \
+sim:/testbench/dut/M10K_write_data_int \
+sim:/testbench/dut/M10K_read_address_int \
+sim:/testbench/dut/M10K_write_address_int \
+sim:/testbench/dut/M10K_write_int \
+sim:/testbench/dut/row \
+sim:/testbench/dut/col \
+sim:/testbench/dut/col_to_add \
+sim:/testbench/dut/state_reg \
+sim:/testbench/dut/state \
+sim:/testbench/dut/curr_row_source_data \
+sim:/testbench/dut/sum \
+sim:/testbench/dut/row_data_i
+restart -f
+run -all
+# Compile of tb_compute.v was successful with warnings.
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v failed with 4 errors.
+# Compile of tb_compute.v failed with 4 errors.
+# Compile of tb_compute.v failed with 8 errors.
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v failed with 1 errors.
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+run -all
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# Compile of tb_compute.v was successful.
+restart -f
+# Loading work.testbench
+# Loading work.M10K_1K_8
+# Loading work.compute
+run -all
+# End time: 15:23:49 on Apr 26,2023, Elapsed time: 2:09:48
+# Errors: 2, Warnings: 0

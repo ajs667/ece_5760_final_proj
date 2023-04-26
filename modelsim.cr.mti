@@ -1,15 +1,10 @@
-C:/Users/gtz4/ece_5760_final_proj/compute_dummy.v {1 {vlog -work work -stats=none C:/Users/gtz4/ece_5760_final_proj/compute_dummy.v
+C:/Users/gtz4/ece_5760_final_proj/tb_compute.v {1 {vlog -work work -stats=none C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module compute_dummy
+-- Compiling module testbench
+-- Compiling module M10K_1K_8
+-- Compiling module compute
 
 Top level modules:
-	compute_dummy
-
-} {} {}} C:/Users/gtz4/ece_5760_final_proj/tb_compute.v {1 {vlog -work work -stats=none C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
--- Compiling module tb_compute
-
-Top level modules:
-	tb_compute
+	testbench
 
 } {} {}}

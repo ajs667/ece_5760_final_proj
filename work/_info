@@ -9,108 +9,151 @@ z2
 cModel Technology
 dC:/programs/intelFPGA/18.1
 vcompute
-!s110 1682358859
+Z0 !s110 1682537008
 !i10b 1
-!s100 HLH^z?hAn`:gBe<_^[lW33
-I>`W;kINTo9MASbIL;E9zV0
-Z0 VDg1SIo80bB@j0V0VzS_@n1
-Z1 dC:/Users/gtz4/ece_5760_final_proj
-w1682357869
-8C:/Users/gtz4/ece_5760_final_proj/compute.v
-FC:/Users/gtz4/ece_5760_final_proj/compute.v
-L0 1
-Z2 OV;L;10.5b;63
+!s100 YF`fmda]oXFH^FPV?l2dR2
+I]RXQa40YoOBPVcjcS1U9]3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/gtz4/ece_5760_final_proj
+Z3 w1682536989
+Z4 8C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+Z5 FC:/Users/gtz4/ece_5760_final_proj/tb_compute.v
+L0 180
+Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1682358859.000000
-!s107 C:/Users/gtz4/ece_5760_final_proj/compute.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gtz4/ece_5760_final_proj/compute.v|
+Z7 !s108 1682537008.000000
+Z8 !s107 C:/Users/gtz4/ece_5760_final_proj/tb_compute.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gtz4/ece_5760_final_proj/tb_compute.v|
 !i113 1
-Z3 o-work work
-Z4 tCvgOpt 0
+Z10 o-work work
+Z11 tCvgOpt 0
 vcompute_dummy
-Z5 !s110 1682359050
+!s110 1682529065
 !i10b 1
-!s100 ghC7Z^DK_aUGYiVFG^`7Z1
-I4S]P0a3nBLF[<jZ=jzW633
-R0
+!s100 [_^`GzA0iRWFPcSbSd3f72
+I8BcPDZM<]j4DhGeNAc=I;1
 R1
-w1682359046
+R2
+w1682528675
 8C:/Users/gtz4/ece_5760_final_proj/compute_dummy.v
 FC:/Users/gtz4/ece_5760_final_proj/compute_dummy.v
-L0 1
-R2
+L0 3
+R6
 r1
 !s85 0
 31
-Z6 !s108 1682359050.000000
+!s108 1682529065.000000
 !s107 C:/Users/gtz4/ece_5760_final_proj/compute_dummy.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gtz4/ece_5760_final_proj/compute_dummy.v|
 !i113 1
-R3
-R4
-vM10K_1K_8
-!s110 1682358782
+R10
+R11
+vDDS
+Z12 !s110 1682528683
 !i10b 1
-!s100 o83H[F^z[[EU9MaT5FTj=3
-INR^hoZTz_WH9Q=V`HdkKP1
-R0
+!s100 ]?nR2^]F=]9j5KfzGLZfj1
+IG:?L3hW[MR2=oM`[UaSz43
 R1
-w1682358778
-Z7 8C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
-Z8 FC:/Users/gtz4/ece_5760_final_proj/tb_compute.v
-L0 130
 R2
-r1
-!s85 0
-31
-!s108 1682358782.000000
-!s107 C:/Users/gtz4/ece_5760_final_proj/tb_compute.v|
-Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gtz4/ece_5760_final_proj/tb_compute.v|
-!i113 1
-R3
+Z13 w1682528666
 R4
-n@m10@k_1@k_8
-vtb_comptute
-!s110 1682098256
-!i10b 1
-!s100 JiFjQk9h5?Y?1jJT:C^VM2
-I5:fR>V@N;iCmHzCmGQ>Qf1
-R0
-R1
-w1682098247
-8C:\Users\gtz4\ece_5760_final_proj\tb_compute.v
-FC:\Users\gtz4\ece_5760_final_proj\tb_compute.v
-L0 3
-R2
-r1
-!s85 0
-31
-!s108 1682098255.000000
-!s107 C:\Users\gtz4\ece_5760_final_proj\tb_compute.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\gtz4\ece_5760_final_proj\tb_compute.v|
-!i113 1
-R3
-R4
-vtb_compute
 R5
-!i10b 1
-!s100 73>T>cKd0`9?<FfXR;Xej1
-IQANF5Jb>>>>51lf1@10ef1
-R0
-R1
-w1682358891
-R7
-R8
-L0 3
-R2
+L0 210
+R6
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/gtz4/ece_5760_final_proj/tb_compute.v|
+Z14 !s108 1682528683.000000
+R8
 R9
 !i113 1
+R10
+R11
+n@d@d@s
+vM10K_1K_8
+R0
+!i10b 1
+!s100 h]OJ@ll1k2EY19>XF2:X@2
+IF5]gCG6:`d:L;f0OfTAiS0
+R1
+R2
 R3
 R4
+R5
+L0 156
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@m10@k_1@k_8
+vsync_rom
+R12
+!i10b 1
+!s100 YTUQZ>gXf98i:<>A>`N5V2
+I1Ygje10I8OKXh;iY8jE7A3
+R1
+R2
+R13
+R4
+R5
+L0 237
+R6
+r1
+!s85 0
+31
+R14
+R8
+R9
+!i113 1
+R10
+R11
+vtb_compute
+!s110 1682528772
+!i10b 1
+!s100 k=R49?GS`8Hd=zk=DM=C40
+I=CMj[16@CC21fO2GB937:3
+R1
+R2
+w1682528766
+R4
+R5
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1682528771.000000
+R8
+R9
+!i113 1
+R10
+R11
+vtestbench
+R0
+!i10b 1
+!s100 cgT@_G?``GPPEiBMlXP3a2
+I_aiEbjI?=G2l5CK6bioiN0
+R1
+R2
+R3
+R4
+R5
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

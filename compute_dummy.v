@@ -1,3 +1,5 @@
+`timescale 1ns/1ns
+
 module compute_dummy (
     input           clk, reset//, START,
     // input  signed   [7:0]   M10K_read_data_source,
@@ -12,6 +14,16 @@ module compute_dummy (
     // output          [7:0]   M10K_write_address_int_wire, // 8 bits, 0 to 256
     // output          M10K_write_int_wire // write to M10K block [i]
 );
+
+reg dummy_var;
+
+always @ (posedge clk) begin
+    if (reset) begin
+        dummy_var <= 0;
+    end
+    dummy_var <= ~dummy_var;
+end
+
 
 // reg signed      [7:0]   M10K_data_buffer_source;
 // reg signed      [7:0]   M10K_write_data_source;
