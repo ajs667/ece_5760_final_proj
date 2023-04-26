@@ -9,21 +9,21 @@ z2
 cModel Technology
 dC:/programs/intelFPGA/18.1
 vcompute
-Z0 !s110 1682537008
+Z0 !s110 1682543616
 !i10b 1
-!s100 YF`fmda]oXFH^FPV?l2dR2
-I]RXQa40YoOBPVcjcS1U9]3
+!s100 4?9N2>BR5IOAB9T5E0d4;3
+ImXdTil>KN0oWj>6lYSc6L1
 Z1 VDg1SIo80bB@j0V0VzS_@n1
 Z2 dC:/Users/gtz4/ece_5760_final_proj
-Z3 w1682536989
+Z3 w1682543605
 Z4 8C:/Users/gtz4/ece_5760_final_proj/tb_compute.v
 Z5 FC:/Users/gtz4/ece_5760_final_proj/tb_compute.v
-L0 180
+L0 198
 Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1682537008.000000
+Z7 !s108 1682543616.000000
 Z8 !s107 C:/Users/gtz4/ece_5760_final_proj/tb_compute.v|
 Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/gtz4/ece_5760_final_proj/tb_compute.v|
 !i113 1
@@ -75,14 +75,14 @@ n@d@d@s
 vM10K_1K_8
 R0
 !i10b 1
-!s100 h]OJ@ll1k2EY19>XF2:X@2
-IF5]gCG6:`d:L;f0OfTAiS0
+!s100 TW<znC`T9nRZ@jQTK;a_N2
+IG7U;oUHYeKPEgH4S:j6kg0
 R1
 R2
 R3
 R4
 R5
-L0 156
+L0 158
 R6
 r1
 !s85 0
@@ -94,6 +94,28 @@ R9
 R10
 R11
 n@m10@k_1@k_8
+vM10K_25bit
+R0
+!i10b 1
+!s100 mJoZ>LQ=C2cYC?j@NX]Og0
+IilEofYV7lLl4XZ7hfzeT?0
+R1
+R2
+R3
+R4
+R5
+L0 175
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@m10@k_25bit
 vsync_rom
 R12
 !i10b 1
@@ -139,8 +161,8 @@ R11
 vtestbench
 R0
 !i10b 1
-!s100 cgT@_G?``GPPEiBMlXP3a2
-I_aiEbjI?=G2l5CK6bioiN0
+!s100 NiR4<4elMUdkPA3[>lTk93
+IoZa5S?kg[B18]^@BLG_W92
 R1
 R2
 R3
