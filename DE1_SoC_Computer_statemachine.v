@@ -469,7 +469,7 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 		video_in_x_cood <= 0 ;
 		video_in_y_cood <= 0 ;
 	   bus_byte_enable <= 4'b0001;
-	   collect_single_frame <= 1'b1;
+	   collect_single_frame <= 0;
        START <= 0;
 
 		timer <= 0;
