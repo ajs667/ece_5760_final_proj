@@ -468,9 +468,9 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 		vga_y_cood <= 10'd50 ;
 		video_in_x_cood <= 0 ;
 		video_in_y_cood <= 0 ;
-	   bus_byte_enable <= 4'b0001;
-	   collect_single_frame <= 0;
-       START <= 0;
+		bus_byte_enable <= 4'b0001;
+		collect_single_frame <= 0;
+		START <= 0; // do we need this? 
 
 		timer <= 0;
 	end
@@ -485,7 +485,7 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 	if (state==0 && SW[0] && (timer & 3)==0 ) begin 
 		state <= 1; // unless last pixel and collect_single_frame is high 	
 		
-		// read all the pixels in the video input
+		// read all the pixels in the video input, this process is getting the source information and able to use in calculations 
 		video_in_x_cood <= video_in_x_cood + 10'd1 ;
 
 		if (video_in_x_cood > 10'd319) begin // check to see if reached end of row 
