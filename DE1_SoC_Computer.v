@@ -442,10 +442,10 @@ M10K_25bit M10K_int(
     .write_address  (M10K_write_address_int), 
     .read_address   (M10K_read_address_int),
     .we             (M10K_write_int), 
-    .clk            (clk_50)
+    .clk            (CLOCK2_50)
 );
 
-wire [7:0] color8b_wire, grey_out_wire ;
+wire [7:0] color8b_wire, grey_out_wire, pio_state ;
 assign color8b_wire = current_pixel_color1;
 
 convrgb2grey greyscale(
@@ -455,10 +455,15 @@ convrgb2grey greyscale(
 
 // reg [63:0] pixel_counter;
 reg [9:0] pio_row_reg, pio_col_reg ;
-assign pio_row = video_in_y_cood ; 
-assign pio_col = video_in_x_cood ; 
-reg [7:0] pio_color_read ;
-assign pio_color_read_wire = pio_color_read ;
+wire [9:0] pio_row, pio_col ; 
+//assign pio_row = video_in_y_cood ; 
+//assign pio_col = video_in_x_cood ; 
+wire [7:0] pio_color_read_wire ;
+reg [7:0] pio_color_read, pio_state_reg ;
+//assign pio_color_read_wire = pio_color_read ;
+assign pio_state = state ;
+wire pio_collectsingle ;
+assign pio_collectsingle = collect_single_frame ;
 
 always @(posedge CLOCK2_50) begin //CLOCK_50
 
@@ -485,7 +490,7 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 	end
 	else begin
 		timer <= timer + 1;
-	end
+//	end
 
 	////////// STATE 0: UPDATE THE VIDEO INPUT COORDINATES AND START READ /////////////////
 	
@@ -494,21 +499,21 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 	// timer delay can be set to 2**n-1, so 3, 7, 15, 31
 	// bigger numbers mean slower frame update to VGA
 	if (state==0 && SW[0] && (timer & 3)==0 ) begin 
-		// state <= 1; // unless last pixel and collect_single_frame is high 	
+		// state <= 1; // unless last pixel and collect_single_frame is high 
 		
 		// read all the pixels in the video input
 		video_in_x_cood <= video_in_x_cood + 10'd1 ;
 
-		if (video_in_x_cood > 10'd319) begin // check to see if reached end of row 
+		if (video_in_x_cood >= 10'd319) begin // check to see if reached end of row 
 			video_in_x_cood <= 0 ;
 			video_in_y_cood <= video_in_y_cood + 10'd1 ;
 
-			if (video_in_y_cood > 10'd239) begin // check to see if reached last pixel 
+			if (video_in_y_cood >= 10'd239) begin // check to see if reached last pixel 
 				if (collect_single_frame == 1) begin
-					state <= 0;
+					state <= 10;
                     START <= 1; // start doing integral calculation ????
 				end
-				else begin // continue going through state machine, not taking single frame  
+				else begin // continue going through state machine, not taking single frame 
 					state <= 1;
 					video_in_y_cood <= 10'd0 ;
 				end
@@ -551,7 +556,7 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 
         // write to source M10K block if collecting frame
 		// if (collect_single_frame == 1) begin
-		M10K_write_address_source = (video_in_x_cood * 320) + video_in_y_cood ; 
+		M10K_write_address_source <= (video_in_x_cood * 320) + video_in_y_cood ; 
 		M10K_write_source <= 1; 
 		M10K_write_data_source <= grey_out_wire;
 			// pixel_counter <= pixel_counter +1;
@@ -569,7 +574,7 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
     if (state==3) begin 
         state <= 4;
         // read from M10K block 
-		M10K_read_address_source = (video_in_x_cood * 320) + video_in_y_cood ; 
+		M10K_read_address_source <= (video_in_x_cood * 320) + video_in_y_cood ; 
 		M10K_write_source <= 0; 
     end
 
@@ -602,14 +607,27 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 		bus_write <= 1'b0;
 	end
 	
+	if (state==10) begin
+		state <= 10; 
+		bus_write <= 1'b0;
+		bus_read <= 1'b0; 
+		M10K_write_source <= 0; 
+	end
+	
 	if (~KEY[1]) begin
 		bus_write <= 1'b0;
 		bus_read <= 1'b0;
 		collect_single_frame <= 1'b1;
 		state <= 0;
+		vga_x_cood <= 10'd100 ;
+		vga_y_cood <= 10'd50 ;
+		video_in_x_cood <= 0 ;
+		video_in_y_cood <= 0 ;
+		bus_byte_enable <= 4'b0001;
 	end
 	else begin
 		collect_single_frame <= collect_single_frame; 
+	end
 	end
 	
 end // always @(posedge state_clock)
@@ -818,7 +836,9 @@ Computer_System The_System (
 //	.pio_source_pixel_export (source_pixel)
 	.pio_col_external_connection_export(pio_col),
 	.pio_color_external_connection_export(pio_color_read_wire),
-	.pio_row_external_connection_export(pio_row)
+	.pio_row_external_connection_export(pio_row),
+	.pio_state_external_connection_export(pio_state),
+	.pio_collectsingle_external_connection_export(pio_collectsingle)
 );
 
 endmodule
