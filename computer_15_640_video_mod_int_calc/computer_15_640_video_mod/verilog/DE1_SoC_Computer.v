@@ -445,6 +445,10 @@ M10K_1K_8 M10K_source(
 //    .clk            (CLOCK2_50)
 //);
 
+localparam VID_IN_WIDTH = 320;
+localparam VID_IN_HEIGHT = 240;
+localparam INT_WIDTH = 24;
+
 wire [7:0] color8b_wire, grey_out_wire, pio_state ;
 assign color8b_wire = current_pixel_color1;
 
@@ -578,8 +582,8 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 	////////// STATE 2: WRITE TO SOURCE M10K BLOCK /////////////////
 
     else if (state==2) begin 
-        // state <= 8;
-		state <= 3; // FOR DEBUGGING, DELETE 
+        state <= 8;
+		// state <= 3; // FOR DEBUGGING, DELETE 
 
         // write to source M10K block if collecting frame
 		// if (collect_single_frame == 1) begin
@@ -595,6 +599,8 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 			// end
 		// end
     end
+	 
+	 /*
 
 	////////// STATE 3: FOR DEBUGGING /////////////////
 
@@ -615,6 +621,8 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 		pio_col_reg <= video_in_x_cood ; 
 		pio_row_reg <= video_in_y_cood ; 
 	end
+	
+	*/
 	
 	// write a pixel to VGA memory
 	else if (state==8) begin
@@ -753,42 +761,6 @@ always @(posedge CLOCK2_50) begin //CLOCK_50
 	end
 	
 end // always @(posedge state_clock)
-
-// reg [7:0] source_pixel_reg;
-// reg [3:0] source_state;
-// reg [63:0] source_read_addr;
-// reg       SOURCE_READ_START;
-
-
-// always @(posedge CLOCK2_50) begin
-
-// 	
-// 		if ( source_state == 0 ) begin
-// 			if(SOURCE_READ_START) begin
-// 				source_state <= 1;
-// 			end
-// 			else begin source_state <= 0; end
-// 		end
-// 		if (source_state == 1) begin
-// 			M10K_read_address_source <= source_read_addr;
-// 			source_state <= 2;
-// 		end
-// 		else if (source_state == 2) begin
-// 			source_read_addr <= source_read_addr + 1;
-// 			if ( source_read_addr == 16 ) begin
-// 				source_state <= 3;
-// 			end
-// 			else begin
-// 				source_state <= 1;
-// 			end
-// 		end
-// 	end
-
-// end // source read always block
-
-localparam VID_IN_WIDTH = 320;
-localparam VID_IN_HEIGHT = 240;
-localparam INT_WIDTH = 24;
 
 
 //=======================================================

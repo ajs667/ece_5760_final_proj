@@ -1,5 +1,5 @@
 Restore Archived Project report for DE1_SoC_Computer
-Fri May 05 13:41:22 2023
+Mon May 08 12:41:51 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------+
 ; Restore Archived Project Summary                                        ;
 +---------------------------------+---------------------------------------+
-; Restore Archived Project Status ; Successful - Fri May 05 13:41:22 2023 ;
+; Restore Archived Project Status ; Successful - Mon May 08 12:41:51 2023 ;
 ; Revision Name                   ; DE1_SoC_Computer                      ;
 ; Top-level Entity Name           ; DE1_SoC_Computer                      ;
 ; Family                          ; Cyclone V                             ;
@@ -46,12 +46,12 @@ refer to the applicable agreement for further details.
 +-----------------------------------+
 ; Restore Archived Project Messages ;
 +-----------------------------------+
-Info: Successfully restored 'C:/Users/gtz4/Downloads/computer_15_640_video_mod/computer_15_640_video_mod/verilog/DE1_SoC_Computer.qar' into the 'C:\\Users\\gtz4\\Downloads\\computer_15_640_video_mod\\computer_15_640_video_mod\\verilog/' directory
+Info: Successfully restored 'C:/Users/gtz4/ece_5760_final_proj/computer_15_640_video_mod_int_calc/computer_15_640_video_mod/verilog/DE1_SoC_Computer.qar' into the 'C:\\Users\\gtz4\\ece_5760_final_proj\\computer_15_640_video_mod_int_calc\\computer_15_640_video_mod\\verilog/' directory
 Info: Generated report 'DE1_SoC_Computer.restore.rpt'
 Info (23030): Evaluation of Tcl script c:/programs/intelfpga/18.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 316 warnings
-    Info: Peak virtual memory: 4882 megabytes
-    Info: Processing ended: Fri May 05 13:41:22 2023
+    Info: Peak virtual memory: 4873 megabytes
+    Info: Processing ended: Mon May 08 12:41:51 2023
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:08
 

@@ -124,26 +124,23 @@ s_serial_protocol.STATE_4_TRANSFER 0 1 0 0 0 1
 s_serial_protocol.STATE_5_STOP_BIT 1 0 0 0 0 1 
 
 State Machine - |DE1_SoC_Computer|state
-Name state.0000010100 state.0000010011 state.0000010010 state.0000010001 state.0000010000 state.0000001111 state.0000001110 state.0000001101 state.0000001100 state.0000001011 state.0000001010 state.0000001001 state.0000001000 state.0000000101 state.0000000100 state.0000000011 state.0000000010 state.0000000001 state.0000000000 
-state.0000000000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.0000000001 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.0000000010 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.0000000011 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.0000000100 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.0000000101 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.0000001000 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.0000001001 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.0000001010 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.0000001011 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.0000001100 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.0000001101 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.0000001110 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-state.0000001111 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.0000010000 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.0000010001 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.0000010010 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.0000010011 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.0000010100 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name state.0000010100 state.0000010011 state.0000010010 state.0000010001 state.0000010000 state.0000001111 state.0000001110 state.0000001101 state.0000001100 state.0000001011 state.0000001010 state.0000001001 state.0000001000 state.0000000010 state.0000000001 state.0000000000 
+state.0000000000 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.0000000001 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.0000000010 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.0000001000 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.0000001001 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.0000001010 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.0000001011 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.0000001100 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.0000001101 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.0000001110 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.0000001111 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.0000010000 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.0000010001 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.0000010010 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.0000010011 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.0000010100 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |DE1_SoC_Computer|Computer_System:The_System|Computer_System_Video_In_Subsystem:video_in_subsystem|Computer_System_Video_In_Subsystem_Video_In_Clipper:video_in_clipper|altera_up_video_clipper_drop:Clipper_Drop|s_video_clipper_drop
 Name s_video_clipper_drop.STATE_0_WAIT_FOR_START s_video_clipper_drop.STATE_2_ADD_MISSING_PART s_video_clipper_drop.STATE_1_RUN_CLIPPER 

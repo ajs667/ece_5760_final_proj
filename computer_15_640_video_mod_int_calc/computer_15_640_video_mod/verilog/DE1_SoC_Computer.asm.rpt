@@ -1,5 +1,5 @@
 Assembler report for DE1_SoC_Computer
-Sun May 07 01:38:09 2023
+Mon May 08 12:59:49 2023
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/nnd25/Desktop/ece_5760_final_proj/computer_15_640_video_mod/computer_15_640_video_mod/verilog/DE1_SoC_Computer.sof
+  5. Assembler Device Options: C:/Users/gtz4/ece_5760_final_proj/computer_15_640_video_mod_int_calc/computer_15_640_video_mod/verilog/DE1_SoC_Computer.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun May 07 01:38:09 2023 ;
+; Assembler Status      ; Successful - Mon May 08 12:59:49 2023 ;
 ; Revision Name         ; DE1_SoC_Computer                      ;
 ; Top-level Entity Name ; DE1_SoC_Computer                      ;
 ; Family                ; Cyclone V                             ;
@@ -57,17 +57,17 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------+
 ; File Name                                                                                                                   ;
 +-----------------------------------------------------------------------------------------------------------------------------+
-; C:/Users/nnd25/Desktop/ece_5760_final_proj/computer_15_640_video_mod/computer_15_640_video_mod/verilog/DE1_SoC_Computer.sof ;
+; C:/Users/gtz4/ece_5760_final_proj/computer_15_640_video_mod_int_calc/computer_15_640_video_mod/verilog/DE1_SoC_Computer.sof ;
 +-----------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/nnd25/Desktop/ece_5760_final_proj/computer_15_640_video_mod/computer_15_640_video_mod/verilog/DE1_SoC_Computer.sof ;
+; Assembler Device Options: C:/Users/gtz4/ece_5760_final_proj/computer_15_640_video_mod_int_calc/computer_15_640_video_mod/verilog/DE1_SoC_Computer.sof ;
 +----------------+--------------------------------------------------------------------------------------------------------------------------------------+
 ; Option         ; Setting                                                                                                                              ;
 +----------------+--------------------------------------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x055172CE                                                                                                                           ;
-; Checksum       ; 0x055172CE                                                                                                                           ;
+; JTAG usercode  ; 0x05516891                                                                                                                           ;
+; Checksum       ; 0x05516891                                                                                                                           ;
 +----------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -77,13 +77,13 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun May 07 01:37:58 2023
+    Info: Processing started: Mon May 08 12:59:38 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DE1_SoC_Computer -c DE1_SoC_Computer
 Info (115030): Assembler is generating device programming files
 Info (11878): Hard Processor Subsystem configuration has not changed and a Preloader software update is not required
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4997 megabytes
-    Info: Processing ended: Sun May 07 01:38:09 2023
+    Info: Peak virtual memory: 5006 megabytes
+    Info: Processing ended: Mon May 08 12:59:49 2023
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:11
 
