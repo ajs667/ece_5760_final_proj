@@ -16,8 +16,8 @@ subprocess.run(command, shell = True)
 
 #process data
 data = np.fromfile(r'C:\Users\ajsco\ece5760\ece_5760_final_proj\model\data.dat', dtype=np.uint8)
-rows = 320  # Replace with the actual number of rows of the array
-cols = 240  # Replace with the actual number of columns of the array
+rows = 240  # Replace with the actual number of rows of the array
+cols = 320  # Replace with the actual number of columns of the array
 gray = data.reshape(rows, cols)
 # print(img)
 
@@ -37,24 +37,56 @@ cv2.destroyAllWindows()
 
 
 
-#run feature detection
+#run feature detection for corners
 feature_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
 objects = feature_cascade.detectMultiScale(gray, scaleFactor = 1.3, minNeighbors = 5) #used to be gray
+objects.flatten()
+print("face corners")
+print(objects)
 
-array = np.asarray(objects)
-# objects.flatten()
+# #run feature detection for eyes
+# eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
+# eyes = eye_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=2, minSize=(30, 30))
 
+# print("eye corners")
+# print(eyes)
+# eyes = eyes.flatten()
+# print(eyes)
+eye_cascade = cv2.CascadeClassifier("haarcascade_eye.xml")
+for (x, y, w, h) in objects:
+    roi_gray = gray[y:y+h, x:x+w]
+    eyes = eye_cascade.detectMultiScale(roi_gray, scaleFactor=1.1, minNeighbors=5)
+
+print(eyes)
+eyes2 = eyes.flatten()
+
+for (ex, ey, ew, eh) in eyes:
+    cv2.rectangle(roi_gray, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
+
+cv2.imshow('image', gray)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 #save data
 with open(r'C:\Users\ajsco\ece5760\ece_5760_final_proj\model\corners.dat', 'wb') as f:
-    array.tofile(f)
+    objects.tofile(f)
 
-print(objects)
+
+
+with open(r'C:\Users\ajsco\ece5760\ece_5760_final_proj\model\eyes.dat', 'wb') as f:
+    eyes2.tofile(f)
+    
 
 
 #send file back
 lin_dest_dir = 'root@10.253.17.24:/home/root/video'
 win_source_dir = r'C:\Users\ajsco\ece5760\ece_5760_final_proj\model\corners.dat'
+command = f'echo {password} | scp -i {ssh_key} {win_source_dir} {lin_dest_dir}' 
+subprocess.run(command, shell = True)
+
+#send file back
+lin_dest_dir = 'root@10.253.17.24:/home/root/video'
+win_source_dir = r'C:\Users\ajsco\ece5760\ece_5760_final_proj\model\eyes.dat'
 command = f'echo {password} | scp -i {ssh_key} {win_source_dir} {lin_dest_dir}' 
 subprocess.run(command, shell = True)
 
